@@ -3,6 +3,7 @@ package co.ufps.edo.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.Data;
 
@@ -12,6 +13,7 @@ public class Typedb {
 	
 	@Id 
 	@Column (length=20)
+	@OneToMany (mappedBy="type")
 	private String id;
 	
 	@Column (length= 100)

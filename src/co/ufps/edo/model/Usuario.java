@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import lombok.Data;
 
@@ -15,6 +16,7 @@ public class Usuario {
 
 	@Id
 	@GeneratedValue
+	@OneToMany (mappedBy="user")
 	private int id;
 	
 	@Column
@@ -27,7 +29,7 @@ public class Usuario {
 	private String pass;
 	
 	@ManyToOne
-	@JoinColumn (name="")
+	@JoinColumn (name="id")
 	private String role;
 	
 	@Column
